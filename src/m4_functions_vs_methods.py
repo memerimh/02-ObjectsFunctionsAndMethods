@@ -4,12 +4,12 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mattias Memering.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 # Part 1:  CONSTRUCTING objects, applying ** METHODS ** to them:
@@ -85,7 +85,9 @@ def main():
     ###########################################################################
     # When the TODOs ask you to test YOUR code, put YOUR tests below this:
     ###########################################################################
-
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
     window.close_on_mouse_click()  # Your code must be ABOVE this statement
 
 
@@ -163,38 +165,31 @@ def turtle3():
 
     maja.right(135)
     maja.forward(300)
-
     maja.begin_fill()
     maja.draw_circle(50)
     maja.end_fill()
 
 
 def try_methods():
-    """
-    Constructs a SimpleTurtle and sets its   pen   to a new rg.Pen
-    that is 'brown' with thickness 5.
-    Then makes the SimpleTurtle move as follows (in the order listed):
-      -- forward   150 units
-      -- left       90 degrees
-      -- forward    50 units
-      -- backward  100 units
-    """
+    drogdar = rg.SimpleTurtle()
+    drogdar.pen = rg.Pen('brown', 5)
+    drogdar.forward(150)
+    drogdar.left(90)
+    drogdar.forward(50)
+    drogdar.backward(100)
     ###########################################################################
-    # TODO: 3. Implement and test this function, per its doc-string above.
+    # DONE: 3. Implement and test this function, per its doc-string above.
     #     (To test it, put a statement in   main   that calls this function.)
     ###########################################################################
 
 
 def try_functions():
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
     # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
-    """
-    Causes several SimpleTurtles to do the following:
-     -- One jumps to (200, 100), then moves (while drawing) to (300, 30)
-     -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
-     -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
-    """
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #    NOTE: This function requires
@@ -206,8 +201,22 @@ def try_functions():
 
 
 def try_methods_and_functions():
-    # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
-    """
+    nimdok = rg.SimpleTurtle()
+    nimdok.pen = rg.Pen('blue', 5)
+    nimdok.backward(150)
+    nimdok.speed = 1
+    nimdok.draw_square(100)
+    nimdok.left(30)
+    nimdok.draw_square(100)
+    nimdok.speed = 5
+    nimdok.pen = rg.Pen('red', 5)
+    draw_many_squares(nimdok, 10, 50, 15)
+    nimdok.speed = 100
+    nimdok.pen = rg.Pen('red', 35)
+    draw_many_squares(nimdok, 8, 300, 60)
+    nimdok.pen = rg.Pen('black', 3)
+    nimdok.backward(200)
+    """"
     Constructs a SimpleTurtle and sets its   pen  to a new rg.Pen
     that is 'blue' with thickness 5.
 
@@ -239,7 +248,7 @@ def try_methods_and_functions():
       8. Draw a SQUARE whose sides are each of length 50.
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #   NOTE: This function should ** CALL ** the
