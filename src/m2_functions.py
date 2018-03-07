@@ -237,7 +237,7 @@ def turtle5():
 #
 # DONE: 7.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
-#
+# 
 #   As a reminder, here is how you should do so:
 #     1. Select   VCS   from the menu bar (above).
 #     2. Choose  Commit  from the pull-down menu that appears.
