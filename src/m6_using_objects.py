@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mattias Memering.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,6 +14,9 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    two_circles()
+    circle_and_rectangle()
+    lines()
 
 
 def two_circles():
@@ -26,8 +29,18 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+    point1 = rg.Point(150, 50)
+    circle1 = rg.Circle(point1, 12)
+    circle1.fill_color = 'blue'
+    point2 = rg.Point(point1.x+50, point1.y)
+    circle2 = rg.Circle(point2, 15)
+    circle2.attach_to(window)
+    circle1.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -36,6 +49,30 @@ def two_circles():
 
 
 def circle_and_rectangle():
+    window = rg.RoseWindow()
+    point1 = rg.Point(150, 50)
+    circle1 = rg.Circle(point1, 12)
+    circle1.fill_color = 'blue'
+    point2 = rg.Point(point1.x + 50, point1.y)
+    point3 = rg.Point(point2.x + 80, point2.y + 50)
+    rectangle = rg.Rectangle(point2, point3)
+    rectangle.attach_to(window)
+    circle1.attach_to(window)
+    window.render()
+    print(circle1.outline_thickness)
+    print(circle1.fill_color)
+    print(circle1.center)
+    print(circle1.center.x)
+    print(circle1.center.y)
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print(rectangle.corner_1)
+    print(rectangle.corner_1.x)
+    print(rectangle.corner_1.y)
+    print(rectangle.corner_2)
+    print(rectangle.corner_2.x)
+    print(rectangle.corner_2.y)
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
@@ -67,7 +104,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -78,6 +115,21 @@ def circle_and_rectangle():
 
 
 def lines():
+    window = rg.RoseWindow()
+    point1 = rg.Point(50, 100)
+    point2 = rg.Point(100, 150)
+    point3 = rg.Point(75, 100)
+    point4 = rg.Point(125, 150)
+    line1 = rg.Line(point1, point2)
+    line2 = rg.Line(point3, point4)
+    line2.thickness = 10
+    line1.attach_to(window)
+    line2.attach_to(window)
+    print(line2.get_midpoint())
+    print(line2.get_midpoint().x)
+    print(line2.get_midpoint().y)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
@@ -100,7 +152,7 @@ def lines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # -------------------------------------------------------------------------
 
 
