@@ -75,7 +75,6 @@ def main():
     and waits for the user to click anywhere in the window to close it.
     """
     window = rg.TurtleWindow()
-
     jump_and_move_turtle(100, 50, 200, -100)
 
     turtle = rg.SimpleTurtle('square')
